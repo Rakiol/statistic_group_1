@@ -1,0 +1,92 @@
+---
+title: "Semesterbegleitende Abgabe WiSe2026"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Statistik im Bachelor Wirtschaftsinformatik
+Dozent_innen: Martin Spott, Michael Heimann, Anja Hirsch   
+Stand: `r format(Sys.Date(), format='%d.%m.%Y')`
+
+<!-- Bitte geben Sie Ihre Gruppennummer und Ihre Namen an -->
+
+**Gruppe:**
+
+Gruppe_12 1
+
+**Autor_innen:**
+
+Eter Rami
+Porath Daniel
+Kiedacz David Julian
+
+## Einleitung
+
+In diesem Semester beschäftigen wir uns mit Kraftstoffpreisen in Berlin. Dazu benutzen wir Daten von der Organisation Tankerkönig [1], die jede Preisänderung angeschlossener Tankstellenbetreiber_innen mit Zeitstempel protokolliert. In der Datei *tankerkoenigWiSe2025-26.csv* finden Sie den Ausschnitt der Daten, den Sie für die Aufgaben benutzen sollen. Dabei haben wir für jede Tankstelle und jede Stunde den Median der von Tankerkönig registrierten Preisänderungen der Kraftstoffe Diesel und E5 ermittelt.
+
+### Regeln
+
+Arbeiten Sie in Ihrer Moodlegruppe von bis zu vier Studierenden, die alle in derselben Übungsgruppe sein und die eine zu wählende Abgabe auch in den zugehörigen Übungen vorstellen müssen (Terminkalender folgt). Jede/r von Ihnen hat in Moodle nur Zugriff auf die Gruppeneinteilung Ihrer in LSF festgelegten Übungsgruppe, wo Sie sich in einer Gruppe eintragen müssen, um Punkte zu bekommen.   
+
+Bearbeiten Sie die Aufgaben fortlaufend in diesem RMarkdown-Dokument und geben es bei jeder Teilabgabe komplett als RMarkdown- und als mit Knit übersetztes HTML-Dokument ab. Stellen Sie sicher, dass das RMarkdown-Dokument lauffähig ist. Gehen Sie dazu davon aus, dass sich auf unseren Rechnern die Daten im selben Verzeichnis befinden werden wie Ihr RMarkdown-Dokument. 
+
+Benutzen Sie nur Verfahren und Techniken, die wir in der Vorlesung besprochen haben. Sie können aber gerne komplexere Visualisierungen einsetzen, wenn dies sinnvoll erscheint. 
+
+Erklären Sie kurz Ihr Vorgehen vor jedem Codeabschnitt und interpretieren die Ergebnisse danach. Schreiben Sie Erklärungen/Interpretationen in Textform zwischen die Codeblöcke, nicht als Kommentare in die Codeblöcke. Sie können den Code aber gerne zusätzlich knapp kommentieren.   
+
+Für jede weitere Woche bekommen Sie eine Aufgabenstellung in RMarkdown, die Sie bitte in diesem Dokument fortlaufend anhängen und dort bearbeiten. Geben Sie immer das gesamte Dokument einschließlich der vorangehenden Aufgaben ab, da die Aufgaben teilweise aufeinander aufbauen und Sie vorangehende Lösungen später benötigen. 
+
+## Woche 1 -- 28.10.2025
+
+Beschreiben Sie zwischen den Codeblöcken in Textform, was Sie warum tun und was Sie herausfinden.
+
+a. Importieren Sie die Daten.
+```{R}
+my_data <- read.csv("tankerkoenigWiSe2025-26.csv")
+head(my_data)
+str(my_data)
+```
+
+b. Beschreiben Sie die Daten. Was sind die Merkmale, was die Merkmalsträger?
+
+Die Merkmale sind -> x, id, date, time, name, brandm streetm house_number, post_code, opening_time, closing_time , e5_median, dieseln_median
+Die Merkmalsträger sind die einzelnen Tankstellenbeobachtungen
+
+```{R}
+
+```
+
+c. Geben Sie für alle Merkmale an, ob sie qualitativ/quantitativ, diskrekt/stetig und auf welchen Skalen sie definiert sind.
+
+x, 
+id, 
+date, 
+time, 
+name, 
+brandm 
+streetm 
+house_number, 
+post_code, 
+opening_time, 
+closing_time , 
+e5_median, 
+dieseln_median
+```{R}
+```
+d. Berechnen Sie für das Merkmal `brand` (Marke) die Tabellen mit absoluter und relativer Häufigkeit. 
+```{R}
+```
+e. Stellen Sie die Tabelle absoluter Häufigkeit von `brand` als Balkendiagramm dar. Beschriften Sie alle Axen und geben dem Diagramm eine Überschrift.
+```{R}
+```
+f. Was bedeuten die absoluten Häufigkeiten im Kontext unserer Daten? Warum gibt es Unterschiede zwischen den Werten der verschiedenen Marken?
+```{R}
+```
+**---Fügen Sie hier kommende Aufgabenbeschreibungen mit Lösungen ein ---**
+
+## Quellen
+
+[1] Tankerkönig UG, URL: https://tankerkoenig.de, letzter Aufruf: 20.10.2025
+
