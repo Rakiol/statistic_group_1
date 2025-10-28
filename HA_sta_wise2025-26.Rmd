@@ -1,6 +1,8 @@
 ---
 title: "Semesterbegleitende Abgabe WiSe2026"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -44,47 +46,77 @@ Beschreiben Sie zwischen den Codeblöcken in Textform, was Sie warum tun und was
 
 a. Importieren Sie die Daten.
 ```{R}
-my_data <- read.csv("tankerkoenigWiSe2025-26.csv")
-head(my_data)
-str(my_data)
+data <- read.csv("tankerkoenigWiSe2025-26.csv")
+head(data)
+str(data)
 ```
 
 b. Beschreiben Sie die Daten. Was sind die Merkmale, was die Merkmalsträger?
 
 Die Merkmale sind -> x, id, date, time, name, brandm streetm house_number, post_code, opening_time, closing_time , e5_median, dieseln_median
-Die Merkmalsträger sind die einzelnen Tankstellenbeobachtungen
+Die Merkmalsträger sind -> die einzelnen Tankstellenbeobachtungen
 
-```{R}
-
-```
 
 c. Geben Sie für alle Merkmale an, ob sie qualitativ/quantitativ, diskrekt/stetig und auf welchen Skalen sie definiert sind.
 
-x, 
-id, 
-date, 
-time, 
-name, 
-brandm 
-streetm 
-house_number, 
-post_code, 
-opening_time, 
-closing_time , 
-e5_median, 
-dieseln_median
-```{R}
-```
+x = quant  diskret  metrisch 
+
+id = qualitativ  --  nominal   
+
+date = qualitativ  diskret ordinal
+
+time = quan  stetig  metrisch  
+
+name = qualitativ  --  nominal
+
+brand = qualitativ --  nominal 
+
+streetm = qualitativ  -- nominal
+
+house_number = quant diskret metrisch
+
+post_code = qualitativ --  nominal
+
+opening_time = quan  stetig  metrisch
+
+closing_time = quant  stetig  ,etrisch
+
+e5_median = quantitativ  stetig  metrisch
+
+dieseln_median = quantitativ  stetig  metrisch
+
 d. Berechnen Sie für das Merkmal `brand` (Marke) die Tabellen mit absoluter und relativer Häufigkeit. 
+
 ```{R}
+abs_brand <- table(data$brand)
+
+rel_brand <- prop.table(table(data$brand))
+
+abs_brand
+rel_brand
 ```
 e. Stellen Sie die Tabelle absoluter Häufigkeit von `brand` als Balkendiagramm dar. Beschriften Sie alle Axen und geben dem Diagramm eine Überschrift.
+
 ```{R}
+barplot(abs_brand, xlab = "Marke", ylab = "Anzahl", main = "Absolute Häufigkeit Brand", las = 2, col = "steelblue", cex.names = 0.8, cex.axis = 0.8)
 ```
+
 f. Was bedeuten die absoluten Häufigkeiten im Kontext unserer Daten? Warum gibt es Unterschiede zwischen den Werten der verschiedenen Marken?
-```{R}
-```
-**---Fügen Sie hier kommende Aufgabenbeschreibungen mit Lösungen ein ---**
+
+
+Die absoluten Häufigkeiten geben an, wie oft jede Marke im Datensatz vorkommt, also wie viele Beobachtungen (Tankstellen) einer bestimmten Marke enthalten sind.
+
+Beispiel:
+
+Wenn Aral = 200, Shell = 150, dann bedeutet das: Es wurden 200 Tankstellen von Aral und 150 von Shell erfasst.
+
+Unterschiedliche Marktanteile der Marken (Aral, Shell, Esso, etc.)
+
+Unterschiedliche Anzahl an Tankstellen je Region
+
+Eventuell nicht überall die gleichen Beobachtungszeitpunkte im Datensatz
+
+
 
 ## Quellen
 
