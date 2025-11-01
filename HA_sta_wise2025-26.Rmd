@@ -116,7 +116,20 @@ Unterschiedliche Anzahl an Tankstellen je Region
 
 Eventuell nicht überall die gleichen Beobachtungszeitpunkte im Datensatz
 
+## Woche 2 -- 04.11.2025
 
+a. Bestimmen Sie, wie viele Werte bei jedem Merkmal im Datensatz fehlen (NA). Finden Sie mit etwas Detektivarbeit heraus, welche Eigenschaft die Datensätze mit den fehlenden Werten haben und wie man die fehlenden mit sinnvollen Werten ersetzen kann. Das Ersetzen müssen Sie nur erklären, nicht implementieren.  
+
+```{r}
+nans <- is.na(data)
+table(nans)
+
+
+```
+
+b. Erstellen Sie Histogramme für die Merkmale `e10_median` und `diesel_median` und zeichnen jeweils das arithmetische Mittel und den Median ein. 
+
+c. Finden Sie heraus, wie man zwei Histogramme zum besseren Vergleich in einem Diagramm überlagern kann. Dazu können Sie auch Bibliotheken wie ggplot2 und plotly betrachten. 
 
 ## Quellen
 
